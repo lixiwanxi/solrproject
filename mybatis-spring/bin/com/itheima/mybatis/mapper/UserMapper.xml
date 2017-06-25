@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间  
+test作区别时  使用原始Dao开发
+               使用Mapper代理开发  namespace： 对此接口进行绑定
+ -->
+<mapper namespace="com.itheima.mybatis.mapper.UserMapper">
+	
+	<!-- 
+	   id:findUserById  找到此sql
+	   parameterType  ： 传入参数的类型
+	   parameterMap : 官方 文档 已经废除
+	   #{id} : mybatis #{} 表示占位符
+	   resultMap : 手动映射 
+	   resultType : 自动映射
+	 -->
+	<select id="findUserById" parameterType="Integer"  resultType="User">
+		select * from user where id = #{vvv}
+	</select>
+
+</mapper>
